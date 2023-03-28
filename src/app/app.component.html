@@ -1,0 +1,46 @@
+<div class="search-box">
+  <div class="search-data">
+    <form [formGroup]="searchForm">
+        <label for="keyword" class="search-item">Search</label>
+        <input type="search" name="keyword" id="keyword" formControlName="keyword">
+        <button type="submit" (click)="searchGrid()">Search</button>
+    </form>
+  </div>
+</div>
+
+<div class="container">
+  <div class="upper-data">
+    <img src="../assets/sunny.png" *ngIf="setHot">
+    <img src="../assets/frost.jpeg" *ngIf="setCold">
+    <div class="weather-data">
+      <div class="location">{{forecastlocation}}</div>
+      <div class="temperature">{{forecastTemp | number: '1.0-0'}} °C</div>
+    </div>
+  </div>
+  <div class="lowerData">
+    <div class="more-info-label">
+      More Information
+    </div>
+    <div *ngFor="let data of filterweatherData">
+      <div class="more-info-container">
+        <div class="info-block">
+          <div class="info-block-label">
+            <span>Date:</span>
+          </div>
+          <div class="info-block-value">
+            {{data.date | date:"dd/MM/yy"}}
+          </div>
+          <div class="info-block-label">
+            <span>Temp</span>
+          </div>
+          <div class="info-block-value">
+            {{(data.temperature.min +data.temperature.max)/2}} °C
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <router-outlet></router-outlet>
