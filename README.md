@@ -1,9 +1,11 @@
 # WeatherApp
-# install lts version of node.
-# in terminal run npm install, and wait for it install files
-#after install completion success , type npm run start in terminal.
-#you can then view in http://localhost:4200/
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+# commands
+run cmd and type git clone https://github.com/Madhupal841998/weather-app-angular.git
+install latest version of node.
+in terminal run npm install, and wait for it install files
+after install completion success , type npm run start in terminal.
+you can then view in http://localhost:4200/
+# This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
 
 ## Development server
 
