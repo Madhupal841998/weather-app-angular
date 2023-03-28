@@ -29,6 +29,7 @@ export class AppComponent implements OnInit {
     this.weatherservice.getWeatherData(this.cityName).subscribe((data) => {
       this.weatherData = data
       this.forecastlocation = this.weatherData.location.name;
+      this.weatherForecastDate =this.weatherData.weatherForecastDate;
       this.forecastTemp = (this.weatherData.forecast.items[0].temperature.max + this.weatherData.forecast.items[0].temperature.min) / 2;
       if (this.forecastTemp > 15) {
         this.setHot = true;
@@ -37,6 +38,7 @@ export class AppComponent implements OnInit {
         this.setHot = false;
         this.setCold = true;
       }
+      this.fahrenheit = this.forecastTemp * 1.8 + 32;
       for (let i = 0; i <= 5; i++) {
         this.filterweatherData[i] = this.weatherData.forecast.items[i];
 
@@ -65,5 +67,15 @@ export class AppComponent implements OnInit {
   clear() {
     this.searchForm.get('keyword')?.setValue('');
     this.searchGrid();
+  }
+  
+    convertCtoF(){
+    this.isCelcius = false;
+    this.isFahrenheit = true;
+  }
+
+  convertFtoC(){
+    this.isCelcius = true;
+    this.isFahrenheit = false;
   }
 }
