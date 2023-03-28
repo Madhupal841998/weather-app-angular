@@ -52,6 +52,31 @@ body {
     border-bottom-right-radius: 20px;
 }
 
+.temp-box{
+  margin-top: 30px;
+  width: 100px;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray-1);
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px var(--shadow-dark);
+}
+.temp-data{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
 .search-item{
     margin-left: 1.5em;
 }
