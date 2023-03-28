@@ -7,14 +7,20 @@
     </form>
   </div>
 </div>
-
+<div class="temp-box">
+  <div class="temp-data">
+    <button type="button" (click)="convertCtoF()" *ngIf="isCelcius">Fahrenheit</button>
+    <button type="button" (click)="convertFtoC()" *ngIf="isFahrenheit">Celcius</button>
+  </div>
+</div>
 <div class="container">
   <div class="upper-data">
     <img src="../assets/sunny.png" *ngIf="setHot">
     <img src="../assets/frost.jpeg" *ngIf="setCold">
     <div class="weather-data">
       <div class="location">{{forecastlocation}}</div>
-      <div class="temperature">{{forecastTemp | number: '1.0-0'}} °C</div>
+      <div class="temperature" *ngIf="isCelcius">{{forecastTemp | number: '1.0-0'}} °C</div>
+      <div class="temperature" *ngIf="isFahrenheit">{{fahrenheit | number: '1.0-0'}} °F</div>
     </div>
   </div>
   <div class="lowerData">
